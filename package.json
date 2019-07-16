@@ -12,19 +12,12 @@
     "build": "webpack -d --watch"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "http-proxy": "^1.17.0",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "babel-loader": "^8.0.6",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.6"
   }
 }
