@@ -48,9 +48,9 @@ app.use(express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 
 
 // Main root
-app.get('/', (req, res) => {
-  res.send();
-});
+// app.get('/', (req, res) => {
+//   res.send();
+// });
 
 // Related Listings
 
@@ -64,21 +64,15 @@ app.get('/rooms/related-listings', (req, res) => {
 });
 
 app.get('/rooms/bundle-relatedListings', (req, res) => {
-  // request(`http://localhost:3001`, (error, response, body) => {
     res.sendFile('/Users/amar/Documents/hrsf119/front-end-capstone/service/related-listings/client/dist/bundle.js');
-  // })
 });
 
 app.get('/rooms/bundle-bookings', (req, res) => {
-  // request(`http://localhost:3000`, (error, response, body) => {
     res.sendFile('/Users/amar/Documents/hrsf119/front-end-capstone/service/bookings/client/dist/bundle.js');
-  // });
 });
 
 app.get('/rooms/bundle-gallery', (req, res) => {
-  // request(`http://localhost:1128`, (error, response, body) => {
     res.sendFile('/Users/amar/Documents/hrsf119/front-end-capstone/service/gallery-modal-overview/client/dist/bundle.js');
-  // });
 });
 
 // Bookings
@@ -104,7 +98,6 @@ app.get('/rooms/bookings/dates/:month', (req, res) => {
 app.get('/images', (req, res) => {
   db.query('use airbnb', (err, rows, fields) => {});
   db.query(`SELECT * FROM Images`, (err, rows, fields) => {
-    console.log(rows);
     res.json(rows);
   });
 });
