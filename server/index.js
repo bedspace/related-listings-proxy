@@ -14,19 +14,19 @@ const PORT = 3004;
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, '..', 'client', 'dist')));
+app.use('/:id', express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 
-app.all('/rooms/related-listings', (req, res) => {
+app.all('/rooms/related-listings/:id', (req, res) => {
   console.log('redirecting to Server1');
   apiProxy.web(req, res, {target: serverOne});
 });
 
-app.all('/rooms/bookings/bundle', (req, res) => {
+app.all('/rooms/bookings/listings/:id', (req, res) => {
   console.log('redirecting to Server2');
   apiProxy.web(req, res, {target: serverTwo});
 });
 
-app.all('/rooms/gallery/bundle', (req, res) => {
+app.all('/images/:houseId', (req, res) => {
   console.log('redirecting to Server3');
   apiProxy.web(req, res, {target: serverThree});
 });
@@ -34,8 +34,8 @@ app.all('/rooms/gallery/bundle', (req, res) => {
 // Related Listings
 
 // get database information for related listings
-app.get('/rooms/related-listings', (req, res) => {
-  let queryString = "SELECT * FROM listings";
+app.get('/rooms/related-listings/:id', (req, res) => {
+  let queryString = `SELECT * FROM listings WHERE listings_id = ${req.params.id}`;
   db.query("use related_listings", (err, rows, fields) => {});
   db.query(queryString, (err, rows, fields) => {
     res.json(rows);
