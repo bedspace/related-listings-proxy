@@ -1,26 +1,15 @@
-# What image do you want to start building on?
-FROM node:latest
+FROM node:alpine
 
+RUN mkdir -p /src
 
-# Make a folder in your image where your app's source code can live
-RUN mkdir -p /src/app
+WORKDIR /src
 
+COPY /package.json /src
 
-# Tell your container where your app's source code will live
-WORKDIR /src/app
-
-
-# What source code do you what to copy, and where to put it?
-COPY . /src/app
-
-
-# Does your app have any dependencies that should be installed?
 RUN npm install
 
+COPY . /src
 
-# What port will the container talk to the outside world with once created?
 EXPOSE 3004
 
-
-# How do you start your app?
-CMD ['npm', 'start']
+CMD ["node", "server/index.js"]

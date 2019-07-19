@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 const db = require('./db/index');
 var httpProxy = require('http-proxy');
 var apiProxy = httpProxy.createProxyServer();
-var serverOne = 'http://localhost:3001',
-    serverTwo = 'http://localhost:3000',
-    serverThree = 'http://localhost:1128';
+var serverOne = 'http://54.183.237.253/',
+    serverTwo = 'http://13.52.99.206/',
+    serverThree = 'http://54.67.69.228/';
 
 const app = express();
 const PORT = 3004;
