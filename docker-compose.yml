@@ -1,0 +1,8 @@
+version: "2.1"
+services:
+  web:
+    container_name: proxy_server
+    image: proxy
+    build: ./
+    ports: 
+      - "80:3004"

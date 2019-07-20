@@ -1,0 +1,67 @@
+#mainContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: column;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+}
+
+#app {
+  align-self: flex-end;
+  margin-right: 10%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+#related-listings{
+  margin-top: 2%;
+}
+
+.navbar {
+  width: 100%;
+  height: 8%;
+}
+
+.reviews{
+  display: flex;
+  flex-flow: column;
+  margin:0 5%;
+  width: 50%;
+}
+
+.reviewsBookings{
+  margin-top: 5%;
+  display: flex;
+  flex-flow: row;
+}
+
+.description1{ 
+  width: 100%;
+  height: 20%;
+}
+
+.description2{
+  width: 100%;
+  height: 15%;
+}
+
+.description3{
+  width: 100%;
+  height: 10%;
+}
+
+.reviews-1{
+  width: 100%;
+  height: 25%;
+}
+.reviews-2{
+  width: 90%;
+  height: 30%;
+}
+.reviews-3{
+  width: 90%;
+  height: 30%;
+}

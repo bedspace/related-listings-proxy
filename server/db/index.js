@@ -7,6 +7,8 @@ let connection = mysql.createConnection({
   database: 'related_listings'
 });
 
+// const connection = mysql.createConnection('mysql://root:@database:3306/');
+
 connection.connect((err) => {
   if(err){
     console.log(err);

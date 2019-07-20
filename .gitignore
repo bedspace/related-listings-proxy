@@ -1,1 +1,5 @@
 node_modules
+
+fec-proxy-server.pem
+
+secrets.txt
